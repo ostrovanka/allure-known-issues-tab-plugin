@@ -1,0 +1,35 @@
+plugins {
+    id 'java'
+    id 'java-library-distribution'
+}
+
+group 'org.badger'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+jar {
+    archiveName = 'plugin.jar'
+}
+
+dependencies {
+    implementation "org.junit.jupiter:junit-jupiter:5.4.2"
+    implementation 'io.qameta.allure:allure-plugin-api:2.13.8'
+    implementation "org.slf4j:slf4j-api:1.7.13"
+    implementation "org.slf4j:slf4j-simple:1.7.13"
+    implementation "org.assertj:assertj-core:3.18.0"
+}
+
+test {
+    useJUnitPlatform {}
+    testLogging {
+        testLogging.showStackTraces = true
+        testLogging.showStandardStreams = true
+        testLogging.events "standardOut", "started", "passed", "skipped", "failed"
+        testLogging.exceptionFormat "full"
+    }
+    maxHeapSize = '1G'
+    include "**/*KnownIssuesPluginTest*"
+}

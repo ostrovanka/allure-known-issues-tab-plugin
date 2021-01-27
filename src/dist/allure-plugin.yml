@@ -1,0 +1,7 @@
+id: allure-known-issues-plugin
+name: Known Issues Aggregator
+description: The aggregator adds behaviors tab to the report
+extensions:
+  - org.badger.KnownIssuesPlugin
+jsFiles:
+  - index.js
