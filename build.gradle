@@ -3,7 +3,7 @@ plugins {
     id 'java-library-distribution'
 }
 
-group 'org.badger'
+group 'org.org.badger'
 version '1.0-SNAPSHOT'
 
 repositories {
